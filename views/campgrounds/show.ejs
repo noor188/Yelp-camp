@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout("layouts/boilerplate")%>
+    <h1>campground show!!!!</h1>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> show </title>
-</head>
+    <h1>
+        <%= campground.title %>
+    </h1>
+    <h2>
+        <%= campground.location %>
+    </h2>
+    <img src="<%= campground.image%>" alt="">
+    <p>
+        <%=campground.description%>
+    </p>
+    <a href="/campgrounds">All campgrounds</a>
+    <a href="/campgrounds/<%=campground._id%>/edit">Edit</a>
 
-<body>
-
-</body>
-<h1>campground show!!!!</h1>
-
-<h1>
-    <%= campground.title %>
-</h1>
-<h2>
-    <%= campground.location %>
-</h2>
-
-</html>
+    <p>
+    <form action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+        <button>DELETE</button>
+    </form>
+    </p>
